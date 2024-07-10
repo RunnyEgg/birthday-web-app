@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            margin: 50px;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            color: #333;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 2em;
+            margin: 20px 0;
+        }
+        img {
+            max-width: 80%;
+            height: auto;
+            display: none; /* Initially hide images */
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease-in-out;
+        }
+        img:hover {
+            transform: scale(1.05);
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: #ff7e5f;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        button:hover {
+            background-color: #feb47b;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Birthday! 😊</h1>
+    <!-- Empty space -->
+    <div style="height: 30px;"></div>
+    <button id="button1">Click here to see your first gift!</button>
+    <img id="image1" src="https://s.pacn.ws/1/p/18o/ea-sports-college-football-25--804209.1.jpg?v=sdlx69" alt="College Football 25">
+    <!-- Empty space -->
+    <div style="height: 30px;"></div>
+    <button id="button2" style="display: none;">But wait, that's not all! Click to see your second gift!</button>
+    <img id="image2" src="https://rockthistownrecords.com/cdn/shop/files/twisters-the-album-original-soundtrack-2xlp-translucent-tan-vinyl-2.jpg?v=1716769492" alt="Twisters The Album">
+    
+    <!-- Include Canvas Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+        document.getElementById('button1').addEventListener('click', function() {
+            document.getElementById('image1').style.display = 'block';
+            document.getElementById('button1').style.display = 'none';
+            document.getElementById('button2').style.display = 'block';
+            // Trigger confetti
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        });
+
+        document.getElementById('button2').addEventListener('click', function() {
+            document.getElementById('image2').style.display = 'block';
+            document.getElementById('button2').style.display = 'none';
+            // Trigger confetti
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        });
+    </script>
+</body>
+</html>
